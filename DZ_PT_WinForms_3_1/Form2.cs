@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,9 +28,47 @@ namespace DZ_PT_WinForms_3_1
         private void button_folder_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog folderDialog = new FolderBrowserDialog();
+            folderDialog.ShowNewFolderButton = false;
             if (folderDialog.ShowDialog() == DialogResult.OK)
             {
-                textBox_folder.Text = folderDialog.SelectedPath;
+                comboBox_folder.Text = folderDialog.SelectedPath;
+            }
+        }
+
+        private void button_search_Click(object sender, EventArgs e)
+        {
+            listBox_searchedFiles.Items.Clear();
+            if (!String.IsNullOrEmpty(this.comboBox_folder.Text))
+            {
+                if (!this.comboBox_folder.Items.Contains(this.comboBox_folder.Text))
+                    this.comboBox_folder.Items.Add(comboBox_folder.Text);
+            }
+            if (!String.IsNullOrEmpty(this.comboBox_fileTypes.Text))
+            {
+                if (!this.comboBox_fileTypes.Items.Contains(this.comboBox_fileTypes.Text))
+                    this.comboBox_fileTypes.Items.Add(comboBox_fileTypes.Text);
+            }
+            try
+            {
+                string path = comboBox_folder.Text;
+                string pattern = comboBox_fileTypes.Text;
+                SearchOption searchOption;
+                if (checkBox_AllDirectories.Checked)
+                    searchOption = SearchOption.AllDirectories;
+                else
+                    searchOption = SearchOption.TopDirectoryOnly;
+                int count = 0;
+                string[] files = Directory.GetFiles(path, pattern, searchOption);
+                foreach (string file in files)
+                {
+                    count++;
+                    listBox_searchedFiles.Items.Add(count + ". " + file.Remove(0, file.LastIndexOf('\\') + 1));
+                }
+                toolStripStatusLabel_count_int.Text = count.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

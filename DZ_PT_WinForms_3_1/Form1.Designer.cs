@@ -69,6 +69,7 @@
             this.ClientSize = new System.Drawing.Size(289, 137);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.button_findFiles);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DZ_PT_WinForms_3_1";
