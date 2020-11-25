@@ -34,6 +34,8 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel_Date = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel_Time = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel_countTXT = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel_count_int = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.comboBox_fileTypes = new System.Windows.Forms.ComboBox();
@@ -43,8 +45,6 @@
             this.button_search = new System.Windows.Forms.Button();
             this.checkBox_AllDirectories = new System.Windows.Forms.CheckBox();
             this.listBox_searchedFiles = new System.Windows.Forms.ListBox();
-            this.toolStripStatusLabel_countTXT = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel_count_int = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,6 +82,18 @@
             this.toolStripStatusLabel_Time.Name = "toolStripStatusLabel_Time";
             this.toolStripStatusLabel_Time.Size = new System.Drawing.Size(0, 17);
             // 
+            // toolStripStatusLabel_countTXT
+            // 
+            this.toolStripStatusLabel_countTXT.Name = "toolStripStatusLabel_countTXT";
+            this.toolStripStatusLabel_countTXT.Size = new System.Drawing.Size(106, 17);
+            this.toolStripStatusLabel_countTXT.Text = "Найдено файлов: ";
+            // 
+            // toolStripStatusLabel_count_int
+            // 
+            this.toolStripStatusLabel_count_int.Name = "toolStripStatusLabel_count_int";
+            this.toolStripStatusLabel_count_int.Size = new System.Drawing.Size(13, 17);
+            this.toolStripStatusLabel_count_int.Text = "0";
+            // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.IsLink = true;
@@ -91,6 +103,7 @@
             // 
             // timer1
             // 
+            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // comboBox_fileTypes
@@ -159,18 +172,6 @@
             this.listBox_searchedFiles.Name = "listBox_searchedFiles";
             this.listBox_searchedFiles.Size = new System.Drawing.Size(521, 446);
             this.listBox_searchedFiles.TabIndex = 7;
-            // 
-            // toolStripStatusLabel_countTXT
-            // 
-            this.toolStripStatusLabel_countTXT.Name = "toolStripStatusLabel_countTXT";
-            this.toolStripStatusLabel_countTXT.Size = new System.Drawing.Size(106, 17);
-            this.toolStripStatusLabel_countTXT.Text = "Найдено файлов: ";
-            // 
-            // toolStripStatusLabel_count_int
-            // 
-            this.toolStripStatusLabel_count_int.Name = "toolStripStatusLabel_count_int";
-            this.toolStripStatusLabel_count_int.Size = new System.Drawing.Size(13, 17);
-            this.toolStripStatusLabel_count_int.Text = "0";
             // 
             // Form2
             // 

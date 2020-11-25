@@ -31,27 +31,27 @@
             this.components = new System.ComponentModel.Container();
             this.button_addEditGoods = new System.Windows.Forms.Button();
             this.groupBox_goodsList = new System.Windows.Forms.GroupBox();
-            this.label_goods = new System.Windows.Forms.Label();
-            this.label_priceTxt = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label_priceDecimal = new System.Windows.Forms.Label();
-            this.groupBox_goodsCart = new System.Windows.Forms.GroupBox();
-            this.button_addToCart = new System.Windows.Forms.Button();
-            this.button_deleteFromCart = new System.Windows.Forms.Button();
-            this.button_clearCart = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label_totalSummtxt = new System.Windows.Forms.Label();
-            this.label_totalSummDecimal = new System.Windows.Forms.Label();
-            this.label_goodsCount = new System.Windows.Forms.Label();
             this.numericUpDown_goodsCountToCart = new System.Windows.Forms.NumericUpDown();
+            this.label_goodsCount = new System.Windows.Forms.Label();
+            this.label_priceDecimal = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label_priceTxt = new System.Windows.Forms.Label();
+            this.label_goods = new System.Windows.Forms.Label();
+            this.groupBox_goodsCart = new System.Windows.Forms.GroupBox();
+            this.label_totalSummDecimal = new System.Windows.Forms.Label();
+            this.label_totalSummtxt = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button_clearCart = new System.Windows.Forms.Button();
+            this.button_deleteFromCart = new System.Windows.Forms.Button();
+            this.button_addToCart = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1_Date = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1_Time = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1_mail = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox_goodsList.SuspendLayout();
-            this.groupBox_goodsCart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_goodsCountToCart)).BeginInit();
+            this.groupBox_goodsCart.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,23 +80,36 @@
             this.groupBox_goodsList.TabStop = false;
             this.groupBox_goodsList.Text = "Список товаров";
             // 
-            // label_goods
+            // numericUpDown_goodsCountToCart
             // 
-            this.label_goods.AutoSize = true;
-            this.label_goods.Location = new System.Drawing.Point(16, 29);
-            this.label_goods.Name = "label_goods";
-            this.label_goods.Size = new System.Drawing.Size(41, 13);
-            this.label_goods.TabIndex = 0;
-            this.label_goods.Text = "Товар:";
+            this.numericUpDown_goodsCountToCart.Location = new System.Drawing.Point(94, 91);
+            this.numericUpDown_goodsCountToCart.Name = "numericUpDown_goodsCountToCart";
+            this.numericUpDown_goodsCountToCart.Size = new System.Drawing.Size(59, 20);
+            this.numericUpDown_goodsCountToCart.TabIndex = 4;
+            this.numericUpDown_goodsCountToCart.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown_goodsCountToCart.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
-            // label_priceTxt
+            // label_goodsCount
             // 
-            this.label_priceTxt.AutoSize = true;
-            this.label_priceTxt.Location = new System.Drawing.Point(16, 62);
-            this.label_priceTxt.Name = "label_priceTxt";
-            this.label_priceTxt.Size = new System.Drawing.Size(36, 13);
-            this.label_priceTxt.TabIndex = 0;
-            this.label_priceTxt.Text = "Цена:";
+            this.label_goodsCount.AutoSize = true;
+            this.label_goodsCount.Location = new System.Drawing.Point(19, 93);
+            this.label_goodsCount.Name = "label_goodsCount";
+            this.label_goodsCount.Size = new System.Drawing.Size(69, 13);
+            this.label_goodsCount.TabIndex = 3;
+            this.label_goodsCount.Text = "Количество:";
+            // 
+            // label_priceDecimal
+            // 
+            this.label_priceDecimal.AutoSize = true;
+            this.label_priceDecimal.Location = new System.Drawing.Point(72, 62);
+            this.label_priceDecimal.Name = "label_priceDecimal";
+            this.label_priceDecimal.Size = new System.Drawing.Size(28, 13);
+            this.label_priceDecimal.TabIndex = 2;
+            this.label_priceDecimal.Text = "0,00";
             // 
             // comboBox1
             // 
@@ -107,14 +120,23 @@
             this.comboBox1.TabIndex = 1;
             this.comboBox1.Text = "Выберите товар...";
             // 
-            // label_priceDecimal
+            // label_priceTxt
             // 
-            this.label_priceDecimal.AutoSize = true;
-            this.label_priceDecimal.Location = new System.Drawing.Point(72, 62);
-            this.label_priceDecimal.Name = "label_priceDecimal";
-            this.label_priceDecimal.Size = new System.Drawing.Size(28, 13);
-            this.label_priceDecimal.TabIndex = 2;
-            this.label_priceDecimal.Text = "0,00";
+            this.label_priceTxt.AutoSize = true;
+            this.label_priceTxt.Location = new System.Drawing.Point(16, 62);
+            this.label_priceTxt.Name = "label_priceTxt";
+            this.label_priceTxt.Size = new System.Drawing.Size(36, 13);
+            this.label_priceTxt.TabIndex = 0;
+            this.label_priceTxt.Text = "Цена:";
+            // 
+            // label_goods
+            // 
+            this.label_goods.AutoSize = true;
+            this.label_goods.Location = new System.Drawing.Point(16, 29);
+            this.label_goods.Name = "label_goods";
+            this.label_goods.Size = new System.Drawing.Size(41, 13);
+            this.label_goods.TabIndex = 0;
+            this.label_goods.Text = "Товар:";
             // 
             // groupBox_goodsCart
             // 
@@ -131,40 +153,15 @@
             this.groupBox_goodsCart.TabStop = false;
             this.groupBox_goodsCart.Text = "Корзина";
             // 
-            // button_addToCart
+            // label_totalSummDecimal
             // 
-            this.button_addToCart.Location = new System.Drawing.Point(25, 38);
-            this.button_addToCart.Name = "button_addToCart";
-            this.button_addToCart.Size = new System.Drawing.Size(75, 23);
-            this.button_addToCart.TabIndex = 0;
-            this.button_addToCart.Text = "Добавить";
-            this.button_addToCart.UseVisualStyleBackColor = true;
-            // 
-            // button_deleteFromCart
-            // 
-            this.button_deleteFromCart.Location = new System.Drawing.Point(135, 38);
-            this.button_deleteFromCart.Name = "button_deleteFromCart";
-            this.button_deleteFromCart.Size = new System.Drawing.Size(75, 23);
-            this.button_deleteFromCart.TabIndex = 1;
-            this.button_deleteFromCart.Text = "Удалить";
-            this.button_deleteFromCart.UseVisualStyleBackColor = true;
-            // 
-            // button_clearCart
-            // 
-            this.button_clearCart.Location = new System.Drawing.Point(251, 38);
-            this.button_clearCart.Name = "button_clearCart";
-            this.button_clearCart.Size = new System.Drawing.Size(75, 23);
-            this.button_clearCart.TabIndex = 2;
-            this.button_clearCart.Text = "Очистить";
-            this.button_clearCart.UseVisualStyleBackColor = true;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(19, 115);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(339, 95);
-            this.listBox1.TabIndex = 3;
+            this.label_totalSummDecimal.AutoSize = true;
+            this.label_totalSummDecimal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_totalSummDecimal.Location = new System.Drawing.Point(109, 243);
+            this.label_totalSummDecimal.Name = "label_totalSummDecimal";
+            this.label_totalSummDecimal.Size = new System.Drawing.Size(44, 20);
+            this.label_totalSummDecimal.TabIndex = 5;
+            this.label_totalSummDecimal.Text = "0.00";
             // 
             // label_totalSummtxt
             // 
@@ -176,40 +173,44 @@
             this.label_totalSummtxt.TabIndex = 4;
             this.label_totalSummtxt.Text = "Итого:";
             // 
-            // label_totalSummDecimal
+            // listBox1
             // 
-            this.label_totalSummDecimal.AutoSize = true;
-            this.label_totalSummDecimal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_totalSummDecimal.Location = new System.Drawing.Point(109, 243);
-            this.label_totalSummDecimal.Name = "label_totalSummDecimal";
-            this.label_totalSummDecimal.Size = new System.Drawing.Size(44, 20);
-            this.label_totalSummDecimal.TabIndex = 5;
-            this.label_totalSummDecimal.Text = "0.00";
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(19, 115);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(339, 95);
+            this.listBox1.TabIndex = 3;
             // 
-            // label_goodsCount
+            // button_clearCart
             // 
-            this.label_goodsCount.AutoSize = true;
-            this.label_goodsCount.Location = new System.Drawing.Point(19, 93);
-            this.label_goodsCount.Name = "label_goodsCount";
-            this.label_goodsCount.Size = new System.Drawing.Size(69, 13);
-            this.label_goodsCount.TabIndex = 3;
-            this.label_goodsCount.Text = "Количество:";
+            this.button_clearCart.Location = new System.Drawing.Point(251, 38);
+            this.button_clearCart.Name = "button_clearCart";
+            this.button_clearCart.Size = new System.Drawing.Size(75, 23);
+            this.button_clearCart.TabIndex = 2;
+            this.button_clearCart.Text = "Очистить";
+            this.button_clearCart.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown_goodsCountToCart
+            // button_deleteFromCart
             // 
-            this.numericUpDown_goodsCountToCart.Location = new System.Drawing.Point(94, 91);
-            this.numericUpDown_goodsCountToCart.Name = "numericUpDown_goodsCountToCart";
-            this.numericUpDown_goodsCountToCart.Size = new System.Drawing.Size(59, 20);
-            this.numericUpDown_goodsCountToCart.TabIndex = 4;
-            this.numericUpDown_goodsCountToCart.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDown_goodsCountToCart.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.button_deleteFromCart.Location = new System.Drawing.Point(135, 38);
+            this.button_deleteFromCart.Name = "button_deleteFromCart";
+            this.button_deleteFromCart.Size = new System.Drawing.Size(75, 23);
+            this.button_deleteFromCart.TabIndex = 1;
+            this.button_deleteFromCart.Text = "Удалить";
+            this.button_deleteFromCart.UseVisualStyleBackColor = true;
+            // 
+            // button_addToCart
+            // 
+            this.button_addToCart.Location = new System.Drawing.Point(25, 38);
+            this.button_addToCart.Name = "button_addToCart";
+            this.button_addToCart.Size = new System.Drawing.Size(75, 23);
+            this.button_addToCart.TabIndex = 0;
+            this.button_addToCart.Text = "Добавить";
+            this.button_addToCart.UseVisualStyleBackColor = true;
             // 
             // timer1
             // 
+            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // statusStrip1
@@ -255,9 +256,9 @@
             this.Text = "DZ_PT_WinForms_3_2__Магазин";
             this.groupBox_goodsList.ResumeLayout(false);
             this.groupBox_goodsList.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_goodsCountToCart)).EndInit();
             this.groupBox_goodsCart.ResumeLayout(false);
             this.groupBox_goodsCart.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_goodsCountToCart)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
