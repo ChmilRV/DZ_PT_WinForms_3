@@ -42,7 +42,7 @@
         }
         public override string ToString()
         {
-            return GoodsName + " Цена: " + GoodsPrice;
+            return GoodsName+ ". Цена: " + GoodsPrice;
         }
     }
 }
