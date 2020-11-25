@@ -29,14 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.groupBox_addEditGoods = new System.Windows.Forms.GroupBox();
-            this.label_goodsPrice = new System.Windows.Forms.Label();
-            this.label_goodsAbout = new System.Windows.Forms.Label();
-            this.label_goodsCharacter = new System.Windows.Forms.Label();
-            this.textBox_goodsAbout = new System.Windows.Forms.TextBox();
-            this.label_goodsName = new System.Windows.Forms.Label();
-            this.textBox_goodsCharacter = new System.Windows.Forms.TextBox();
-            this.textBox_goodsName = new System.Windows.Forms.TextBox();
             this.button_Save = new System.Windows.Forms.Button();
             this.button_Cancel = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -44,85 +36,17 @@
             this.toolStripStatusLabel1_Time = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1_mail = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.groupBox_addEditGoods.SuspendLayout();
+            this.textBox_goodsName = new System.Windows.Forms.TextBox();
+            this.textBox_goodsCharacter = new System.Windows.Forms.TextBox();
+            this.label_goodsName = new System.Windows.Forms.Label();
+            this.textBox_goodsAbout = new System.Windows.Forms.TextBox();
+            this.label_goodsCharacter = new System.Windows.Forms.Label();
+            this.label_goodsAbout = new System.Windows.Forms.Label();
+            this.label_goodsPrice = new System.Windows.Forms.Label();
+            this.numericUpDown_goodsPrice = new System.Windows.Forms.NumericUpDown();
             this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_goodsPrice)).BeginInit();
             this.SuspendLayout();
-            // 
-            // groupBox_addEditGoods
-            // 
-            this.groupBox_addEditGoods.Controls.Add(this.numericUpDown1);
-            this.groupBox_addEditGoods.Controls.Add(this.label_goodsPrice);
-            this.groupBox_addEditGoods.Controls.Add(this.label_goodsAbout);
-            this.groupBox_addEditGoods.Controls.Add(this.label_goodsCharacter);
-            this.groupBox_addEditGoods.Controls.Add(this.textBox_goodsAbout);
-            this.groupBox_addEditGoods.Controls.Add(this.label_goodsName);
-            this.groupBox_addEditGoods.Controls.Add(this.textBox_goodsCharacter);
-            this.groupBox_addEditGoods.Controls.Add(this.textBox_goodsName);
-            this.groupBox_addEditGoods.Location = new System.Drawing.Point(32, 29);
-            this.groupBox_addEditGoods.Name = "groupBox_addEditGoods";
-            this.groupBox_addEditGoods.Size = new System.Drawing.Size(442, 218);
-            this.groupBox_addEditGoods.TabIndex = 0;
-            this.groupBox_addEditGoods.TabStop = false;
-            this.groupBox_addEditGoods.Text = "groupBox1";
-            // 
-            // label_goodsPrice
-            // 
-            this.label_goodsPrice.AutoSize = true;
-            this.label_goodsPrice.Location = new System.Drawing.Point(7, 167);
-            this.label_goodsPrice.Name = "label_goodsPrice";
-            this.label_goodsPrice.Size = new System.Drawing.Size(36, 13);
-            this.label_goodsPrice.TabIndex = 1;
-            this.label_goodsPrice.Text = "Цена:";
-            // 
-            // label_goodsAbout
-            // 
-            this.label_goodsAbout.AutoSize = true;
-            this.label_goodsAbout.Location = new System.Drawing.Point(6, 124);
-            this.label_goodsAbout.Name = "label_goodsAbout";
-            this.label_goodsAbout.Size = new System.Drawing.Size(60, 13);
-            this.label_goodsAbout.TabIndex = 1;
-            this.label_goodsAbout.Text = "Описание:";
-            // 
-            // label_goodsCharacter
-            // 
-            this.label_goodsCharacter.AutoSize = true;
-            this.label_goodsCharacter.Location = new System.Drawing.Point(6, 77);
-            this.label_goodsCharacter.Name = "label_goodsCharacter";
-            this.label_goodsCharacter.Size = new System.Drawing.Size(93, 13);
-            this.label_goodsCharacter.TabIndex = 1;
-            this.label_goodsCharacter.Text = "Характеристика:";
-            // 
-            // textBox_goodsAbout
-            // 
-            this.textBox_goodsAbout.Location = new System.Drawing.Point(100, 117);
-            this.textBox_goodsAbout.Name = "textBox_goodsAbout";
-            this.textBox_goodsAbout.Size = new System.Drawing.Size(251, 20);
-            this.textBox_goodsAbout.TabIndex = 0;
-            // 
-            // label_goodsName
-            // 
-            this.label_goodsName.AutoSize = true;
-            this.label_goodsName.Location = new System.Drawing.Point(7, 38);
-            this.label_goodsName.Name = "label_goodsName";
-            this.label_goodsName.Size = new System.Drawing.Size(86, 13);
-            this.label_goodsName.TabIndex = 1;
-            this.label_goodsName.Text = "Наименование:";
-            // 
-            // textBox_goodsCharacter
-            // 
-            this.textBox_goodsCharacter.Location = new System.Drawing.Point(99, 74);
-            this.textBox_goodsCharacter.Name = "textBox_goodsCharacter";
-            this.textBox_goodsCharacter.Size = new System.Drawing.Size(251, 20);
-            this.textBox_goodsCharacter.TabIndex = 0;
-            // 
-            // textBox_goodsName
-            // 
-            this.textBox_goodsName.Location = new System.Drawing.Point(99, 35);
-            this.textBox_goodsName.Name = "textBox_goodsName";
-            this.textBox_goodsName.Size = new System.Drawing.Size(251, 20);
-            this.textBox_goodsName.TabIndex = 0;
             // 
             // button_Save
             // 
@@ -132,6 +56,7 @@
             this.button_Save.TabIndex = 1;
             this.button_Save.Text = "Сохранить";
             this.button_Save.UseVisualStyleBackColor = true;
+            this.button_Save.Click += new System.EventHandler(this.button_Save_Click);
             // 
             // button_Cancel
             // 
@@ -141,6 +66,7 @@
             this.button_Cancel.TabIndex = 1;
             this.button_Cancel.Text = "Отмена";
             this.button_Cancel.UseVisualStyleBackColor = true;
+            this.button_Cancel.Click += new System.EventHandler(this.button_Cancel_Click);
             // 
             // statusStrip1
             // 
@@ -150,7 +76,7 @@
             this.toolStripStatusLabel1_mail});
             this.statusStrip1.Location = new System.Drawing.Point(0, 373);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(565, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(571, 22);
             this.statusStrip1.TabIndex = 4;
             // 
             // toolStripStatusLabel1_Date
@@ -175,46 +101,101 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // numericUpDown1
+            // textBox_goodsName
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(104, 168);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 2;
+            this.textBox_goodsName.Location = new System.Drawing.Point(111, 30);
+            this.textBox_goodsName.Name = "textBox_goodsName";
+            this.textBox_goodsName.Size = new System.Drawing.Size(251, 20);
+            this.textBox_goodsName.TabIndex = 0;
+            // 
+            // textBox_goodsCharacter
+            // 
+            this.textBox_goodsCharacter.Location = new System.Drawing.Point(111, 69);
+            this.textBox_goodsCharacter.Name = "textBox_goodsCharacter";
+            this.textBox_goodsCharacter.Size = new System.Drawing.Size(251, 20);
+            this.textBox_goodsCharacter.TabIndex = 0;
+            // 
+            // label_goodsName
+            // 
+            this.label_goodsName.AutoSize = true;
+            this.label_goodsName.Location = new System.Drawing.Point(19, 33);
+            this.label_goodsName.Name = "label_goodsName";
+            this.label_goodsName.Size = new System.Drawing.Size(86, 13);
+            this.label_goodsName.TabIndex = 1;
+            this.label_goodsName.Text = "Наименование:";
+            // 
+            // textBox_goodsAbout
+            // 
+            this.textBox_goodsAbout.Location = new System.Drawing.Point(112, 112);
+            this.textBox_goodsAbout.Name = "textBox_goodsAbout";
+            this.textBox_goodsAbout.Size = new System.Drawing.Size(251, 20);
+            this.textBox_goodsAbout.TabIndex = 0;
+            // 
+            // label_goodsCharacter
+            // 
+            this.label_goodsCharacter.AutoSize = true;
+            this.label_goodsCharacter.Location = new System.Drawing.Point(18, 72);
+            this.label_goodsCharacter.Name = "label_goodsCharacter";
+            this.label_goodsCharacter.Size = new System.Drawing.Size(93, 13);
+            this.label_goodsCharacter.TabIndex = 1;
+            this.label_goodsCharacter.Text = "Характеристика:";
+            // 
+            // label_goodsAbout
+            // 
+            this.label_goodsAbout.AutoSize = true;
+            this.label_goodsAbout.Location = new System.Drawing.Point(18, 119);
+            this.label_goodsAbout.Name = "label_goodsAbout";
+            this.label_goodsAbout.Size = new System.Drawing.Size(60, 13);
+            this.label_goodsAbout.TabIndex = 1;
+            this.label_goodsAbout.Text = "Описание:";
+            // 
+            // label_goodsPrice
+            // 
+            this.label_goodsPrice.AutoSize = true;
+            this.label_goodsPrice.Location = new System.Drawing.Point(19, 162);
+            this.label_goodsPrice.Name = "label_goodsPrice";
+            this.label_goodsPrice.Size = new System.Drawing.Size(36, 13);
+            this.label_goodsPrice.TabIndex = 1;
+            this.label_goodsPrice.Text = "Цена:";
+            // 
+            // numericUpDown_goodsPrice
+            // 
+            this.numericUpDown_goodsPrice.DecimalPlaces = 2;
+            this.numericUpDown_goodsPrice.Location = new System.Drawing.Point(116, 163);
+            this.numericUpDown_goodsPrice.Name = "numericUpDown_goodsPrice";
+            this.numericUpDown_goodsPrice.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown_goodsPrice.TabIndex = 2;
+            this.numericUpDown_goodsPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(565, 395);
+            this.ClientSize = new System.Drawing.Size(571, 395);
+            this.Controls.Add(this.numericUpDown_goodsPrice);
             this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.label_goodsPrice);
             this.Controls.Add(this.button_Cancel);
+            this.Controls.Add(this.label_goodsAbout);
             this.Controls.Add(this.button_Save);
-            this.Controls.Add(this.groupBox_addEditGoods);
+            this.Controls.Add(this.label_goodsCharacter);
+            this.Controls.Add(this.textBox_goodsAbout);
+            this.Controls.Add(this.label_goodsName);
+            this.Controls.Add(this.textBox_goodsName);
+            this.Controls.Add(this.textBox_goodsCharacter);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
-            this.groupBox_addEditGoods.ResumeLayout(false);
-            this.groupBox_addEditGoods.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_goodsPrice)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox_addEditGoods;
-        private System.Windows.Forms.Label label_goodsPrice;
-        private System.Windows.Forms.Label label_goodsAbout;
-        private System.Windows.Forms.Label label_goodsCharacter;
-        private System.Windows.Forms.TextBox textBox_goodsAbout;
-        private System.Windows.Forms.Label label_goodsName;
-        private System.Windows.Forms.TextBox textBox_goodsCharacter;
-        private System.Windows.Forms.TextBox textBox_goodsName;
         private System.Windows.Forms.Button button_Save;
         private System.Windows.Forms.Button button_Cancel;
         private System.Windows.Forms.StatusStrip statusStrip1;
@@ -222,6 +203,13 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1_Time;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1_mail;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.TextBox textBox_goodsName;
+        private System.Windows.Forms.TextBox textBox_goodsCharacter;
+        private System.Windows.Forms.Label label_goodsName;
+        private System.Windows.Forms.TextBox textBox_goodsAbout;
+        private System.Windows.Forms.Label label_goodsCharacter;
+        private System.Windows.Forms.Label label_goodsAbout;
+        private System.Windows.Forms.Label label_goodsPrice;
+        private System.Windows.Forms.NumericUpDown numericUpDown_goodsPrice;
     }
 }
