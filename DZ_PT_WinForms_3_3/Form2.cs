@@ -18,17 +18,13 @@ namespace DZ_PT_WinForms_3_3
         {
             InitializeComponent();
             textBox_textEdit.Text = textForEdit;
-            //textBox_textEdit.
             timer1.Start();
-
-            //comboBox_font.Items.AddRange();
         }
 
         public string TText
         {
             get { return textBox_textEdit.Text; }
         }
-
 
         private void timer1_Tick(object sender, EventArgs e)
         {
