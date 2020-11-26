@@ -1,18 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DZ_PT_WinForms_3_3
 {
     public partial class Form1 : Form
     {
+
+        bool isChanged = false;
         public Form1()
         {
             InitializeComponent();
@@ -22,7 +17,7 @@ namespace DZ_PT_WinForms_3_3
         private void timer1_Tick(object sender, EventArgs e)
         {
             toolStripStatusLabel1_Date.Text = DateTime.Now.ToShortDateString();
-            toolStripStatusLabel1_Time.Text = DateTime.Now.ToShortTimeString();
+            toolStripStatusLabel1_Time.Text = DateTime.Now.ToLongTimeString();
         }
 
         private void Exit_ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -57,15 +52,54 @@ namespace DZ_PT_WinForms_3_3
                 reader.Close();
                 button_edit.Enabled = true;
                 EditText_ToolStripMenuItem.Enabled = true;
+                SaveFile_ToolStripMenuItem.Enabled = true;
+            }
+        }
+
+        private void SaveFile()
+        {
+            SaveFileDialog save = new SaveFileDialog();//создали экземпляр
+            save.DefaultExt = "txt";
+            save.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter writer = new StreamWriter(save.FileName);
+                writer.Write(textBox_textOpen.Text); //записываем в файл содержимое поля
+                writer.Close();//закрываем writer
             }
         }
 
         private void button_edit_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2(textBox_textOpen.Text);
-            form2.ShowDialog();
+            Form2 form2 = new Form2(this, textBox_textOpen.Text);
+            if (form2.ShowDialog() == DialogResult.OK)
+            {
+                textBox_textOpen.Text=(form2.TText);
+                isChanged = true;
+            }
+        }
 
-
+        private void SaveFile_ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFile();
+        }
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (isChanged)
+            {
+                if (MessageBox.Show("Документ был изменен.\nСохранить файл?", "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Question)== DialogResult.Yes)
+                {
+                    SaveFileDialog save = new SaveFileDialog();//создали экземпляр
+                    save.DefaultExt = "txt";
+                    save.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+                    if (save.ShowDialog() == DialogResult.OK)
+                    {
+                        StreamWriter writer = new StreamWriter(save.FileName);
+                        writer.Write(textBox_textOpen.Text); //записываем в файл содержимое поля
+                        writer.Close();//закрываем writer
+                    }
+                }
+            }
         }
     }
 }

@@ -33,19 +33,22 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.File_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Save_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Exit_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Edit_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Save_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Cancel_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button_save = new System.Windows.Forms.Button();
-            this.button_cancel = new System.Windows.Forms.Button();
             this.Help_ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.About_ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_save = new System.Windows.Forms.Button();
+            this.button_cancel = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel2_Date = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2_Time = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2_mail = new System.Windows.Forms.ToolStripStatusLabel();
             this.button_font = new System.Windows.Forms.Button();
+            this.button_PrintPreviewDialog = new System.Windows.Forms.Button();
+            this.button_PageSetupDialog = new System.Windows.Forms.Button();
+            this.button_Print = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +59,7 @@
             this.textBox_textEdit.Multiline = true;
             this.textBox_textEdit.Name = "textBox_textEdit";
             this.textBox_textEdit.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_textEdit.Size = new System.Drawing.Size(596, 491);
+            this.textBox_textEdit.Size = new System.Drawing.Size(596, 501);
             this.textBox_textEdit.TabIndex = 0;
             // 
             // timer1
@@ -79,56 +82,40 @@
             // File_ToolStripMenuItem
             // 
             this.File_ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Save_ToolStripMenuItem,
             this.Exit_ToolStripMenuItem});
             this.File_ToolStripMenuItem.Name = "File_ToolStripMenuItem";
             this.File_ToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.File_ToolStripMenuItem.Text = "Файл";
             // 
-            // Save_ToolStripMenuItem
-            // 
-            this.Save_ToolStripMenuItem.Name = "Save_ToolStripMenuItem";
-            this.Save_ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.Save_ToolStripMenuItem.Text = "Сохранить";
-            // 
             // Exit_ToolStripMenuItem
             // 
             this.Exit_ToolStripMenuItem.Name = "Exit_ToolStripMenuItem";
-            this.Exit_ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.Exit_ToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.Exit_ToolStripMenuItem.Text = "Выход";
             this.Exit_ToolStripMenuItem.Click += new System.EventHandler(this.Exit_ToolStripMenuItem_Click);
             // 
             // Edit_ToolStripMenuItem
             // 
             this.Edit_ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Save_ToolStripMenuItem,
             this.Cancel_ToolStripMenuItem});
             this.Edit_ToolStripMenuItem.Name = "Edit_ToolStripMenuItem";
             this.Edit_ToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
             this.Edit_ToolStripMenuItem.Text = "Редактировать";
             // 
+            // Save_ToolStripMenuItem
+            // 
+            this.Save_ToolStripMenuItem.Name = "Save_ToolStripMenuItem";
+            this.Save_ToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.Save_ToolStripMenuItem.Text = "Сохранить";
+            this.Save_ToolStripMenuItem.Click += new System.EventHandler(this.Save_ToolStripMenuItem_Click);
+            // 
             // Cancel_ToolStripMenuItem
             // 
             this.Cancel_ToolStripMenuItem.Name = "Cancel_ToolStripMenuItem";
-            this.Cancel_ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.Cancel_ToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.Cancel_ToolStripMenuItem.Text = "Отменить";
-            // 
-            // button_save
-            // 
-            this.button_save.Location = new System.Drawing.Point(12, 524);
-            this.button_save.Name = "button_save";
-            this.button_save.Size = new System.Drawing.Size(123, 31);
-            this.button_save.TabIndex = 3;
-            this.button_save.Text = "Сохранить";
-            this.button_save.UseVisualStyleBackColor = true;
-            // 
-            // button_cancel
-            // 
-            this.button_cancel.Location = new System.Drawing.Point(163, 524);
-            this.button_cancel.Name = "button_cancel";
-            this.button_cancel.Size = new System.Drawing.Size(123, 31);
-            this.button_cancel.TabIndex = 4;
-            this.button_cancel.Text = "Отменить";
-            this.button_cancel.UseVisualStyleBackColor = true;
+            this.Cancel_ToolStripMenuItem.Click += new System.EventHandler(this.Cancel_ToolStripMenuItem_Click);
             // 
             // Help_ToolStripMenuItem1
             // 
@@ -141,9 +128,29 @@
             // About_ToolStripMenuItem1
             // 
             this.About_ToolStripMenuItem1.Name = "About_ToolStripMenuItem1";
-            this.About_ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.About_ToolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
             this.About_ToolStripMenuItem1.Text = "О программе";
             this.About_ToolStripMenuItem1.Click += new System.EventHandler(this.About_ToolStripMenuItem1_Click);
+            // 
+            // button_save
+            // 
+            this.button_save.Location = new System.Drawing.Point(8, 536);
+            this.button_save.Name = "button_save";
+            this.button_save.Size = new System.Drawing.Size(123, 31);
+            this.button_save.TabIndex = 3;
+            this.button_save.Text = "Сохранить";
+            this.button_save.UseVisualStyleBackColor = true;
+            this.button_save.Click += new System.EventHandler(this.button_save_Click);
+            // 
+            // button_cancel
+            // 
+            this.button_cancel.Location = new System.Drawing.Point(144, 536);
+            this.button_cancel.Name = "button_cancel";
+            this.button_cancel.Size = new System.Drawing.Size(123, 31);
+            this.button_cancel.TabIndex = 4;
+            this.button_cancel.Text = "Отменить";
+            this.button_cancel.UseVisualStyleBackColor = true;
+            this.button_cancel.Click += new System.EventHandler(this.button_cancel_Click);
             // 
             // statusStrip1
             // 
@@ -178,19 +185,52 @@
             // 
             // button_font
             // 
-            this.button_font.Location = new System.Drawing.Point(533, 524);
+            this.button_font.Location = new System.Drawing.Point(288, 536);
             this.button_font.Name = "button_font";
-            this.button_font.Size = new System.Drawing.Size(75, 23);
+            this.button_font.Size = new System.Drawing.Size(75, 31);
             this.button_font.TabIndex = 6;
             this.button_font.Text = "Шрифт";
             this.button_font.UseVisualStyleBackColor = true;
-            this.button_font.Click += new System.EventHandler(this.button1_Click);
+            this.button_font.Click += new System.EventHandler(this.button_font_Click);
+            // 
+            // button_PrintPreviewDialog
+            // 
+            this.button_PrintPreviewDialog.Location = new System.Drawing.Point(368, 536);
+            this.button_PrintPreviewDialog.Name = "button_PrintPreviewDialog";
+            this.button_PrintPreviewDialog.Size = new System.Drawing.Size(75, 31);
+            this.button_PrintPreviewDialog.TabIndex = 7;
+            this.button_PrintPreviewDialog.Text = "Preview";
+            this.button_PrintPreviewDialog.UseVisualStyleBackColor = true;
+            this.button_PrintPreviewDialog.Click += new System.EventHandler(this.button_PrintPreviewDialog_Click);
+            // 
+            // button_PageSetupDialog
+            // 
+            this.button_PageSetupDialog.Location = new System.Drawing.Point(448, 536);
+            this.button_PageSetupDialog.Name = "button_PageSetupDialog";
+            this.button_PageSetupDialog.Size = new System.Drawing.Size(75, 31);
+            this.button_PageSetupDialog.TabIndex = 8;
+            this.button_PageSetupDialog.Text = "Page Setup";
+            this.button_PageSetupDialog.UseVisualStyleBackColor = true;
+            this.button_PageSetupDialog.Click += new System.EventHandler(this.button_PageSetupDialog_Click);
+            // 
+            // button_Print
+            // 
+            this.button_Print.Location = new System.Drawing.Point(528, 536);
+            this.button_Print.Name = "button_Print";
+            this.button_Print.Size = new System.Drawing.Size(80, 31);
+            this.button_Print.TabIndex = 9;
+            this.button_Print.Text = "Print";
+            this.button_Print.UseVisualStyleBackColor = true;
+            this.button_Print.Click += new System.EventHandler(this.button_Print_Click);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(620, 597);
+            this.Controls.Add(this.button_Print);
+            this.Controls.Add(this.button_PageSetupDialog);
+            this.Controls.Add(this.button_PrintPreviewDialog);
             this.Controls.Add(this.button_font);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.button_cancel);
@@ -217,7 +257,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem File_ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem Save_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Exit_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Edit_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Cancel_ToolStripMenuItem;
@@ -230,5 +269,9 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2_Time;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2_mail;
         private System.Windows.Forms.Button button_font;
+        private System.Windows.Forms.ToolStripMenuItem Save_ToolStripMenuItem;
+        private System.Windows.Forms.Button button_PrintPreviewDialog;
+        private System.Windows.Forms.Button button_PageSetupDialog;
+        private System.Windows.Forms.Button button_Print;
     }
 }
