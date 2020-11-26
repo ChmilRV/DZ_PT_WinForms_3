@@ -21,10 +21,10 @@ namespace DZ_PT_WinForms_3_3
             timer1.Start();
         }
 
-        public string TText
-        {
-            get { return textBox_textEdit.Text; }
-        }
+        //public string TText
+        //{
+        //    get { return textBox_textEdit.Text; }
+        //}
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -42,25 +42,47 @@ namespace DZ_PT_WinForms_3_3
             MessageBox.Show("Простейший текстовый редактор.\nchmilrv@gmail.com", "О программе", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
        
+
+
+
+
         private void button_save_Click(object sender, EventArgs e)
         {
+            textBox_textEdit.Text=form1.TText;
+            
+            
+
+
+            //this.DialogResult = DialogResult.OK;
+        }
+
+
+        private void Save_ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+
+
             this.DialogResult = DialogResult.OK;
         }
+
 
         private void button_cancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
         }
-
-        private void Save_ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.OK;
-        }
-
         private void Cancel_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
         }
+
+
+        
+
+
+
+        
+
+
 
         private void button_font_Click(object sender, EventArgs e)
         {

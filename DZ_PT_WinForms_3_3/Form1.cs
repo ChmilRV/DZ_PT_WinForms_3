@@ -14,6 +14,12 @@ namespace DZ_PT_WinForms_3_3
             timer1.Start();
         }
 
+        public string TText
+        {
+            set { textBox_textOpen.Text = value; }
+            //get { return textBox_textEdit.Text; }
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             toolStripStatusLabel1_Date.Text = DateTime.Now.ToShortDateString();
@@ -72,13 +78,18 @@ namespace DZ_PT_WinForms_3_3
         private void button_edit_Click(object sender, EventArgs e)
         {
             Form2 form2 = new Form2(this, textBox_textOpen.Text);
-            //form2.Show();
-            if (form2.ShowDialog() == DialogResult.OK)
-            {
-                textBox_textOpen.Text=(form2.TText);
-                isChanged = true;
-                SaveFile_ToolStripMenuItem.Enabled = true;
-            }
+            form2.Show();
+            isChanged = true;
+            SaveFile_ToolStripMenuItem.Enabled = true;
+
+            //if (form2.ShowDialog() == DialogResult.OK)
+            //{
+            //    textBox_textOpen.Text=(form2.TText);
+            //    isChanged = true;
+            //    SaveFile_ToolStripMenuItem.Enabled = true;
+            //}
+
+
         }
 
         private void SaveFile_ToolStripMenuItem_Click(object sender, EventArgs e)
