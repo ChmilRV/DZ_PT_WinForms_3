@@ -19,9 +19,9 @@ namespace DZ_PT_WinForms_3_2
                 richTextBox_goodsCharacter.Text = goods.GoodsCharacter;
                 richTextBox_goodsAbout.Text = goods.GoodsAbout;
                 numericUpDown_goodsPrice.Value = (Decimal)goods.GoodsPrice;
-                this.Text = "Редактирование товара";
+                Text = "Редактирование товара";
             }
-            else this.Text = "Добавление товара";
+            else Text = "Добавление товара";
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -40,11 +40,11 @@ namespace DZ_PT_WinForms_3_2
             goods.GoodsCharacter = richTextBox_goodsCharacter.Text;
             goods.GoodsAbout = richTextBox_goodsAbout.Text;
             goods.GoodsPrice = (Double)numericUpDown_goodsPrice.Value;
-            this.DialogResult = DialogResult.OK;
+            DialogResult = DialogResult.OK;
         }
         private void button_Cancel_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
+            DialogResult = DialogResult.Cancel;
         }
     }
 }

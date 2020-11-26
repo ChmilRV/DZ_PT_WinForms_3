@@ -38,15 +38,15 @@ namespace DZ_PT_WinForms_3_1
         private void button_search_Click(object sender, EventArgs e)
         {
             listBox_searchedFiles.Items.Clear();
-            if (!String.IsNullOrEmpty(this.comboBox_folder.Text))
+            if (!String.IsNullOrEmpty(comboBox_folder.Text))
             {
-                if (!this.comboBox_folder.Items.Contains(this.comboBox_folder.Text))
-                    this.comboBox_folder.Items.Add(comboBox_folder.Text);
+                if (!comboBox_folder.Items.Contains(comboBox_folder.Text))
+                    comboBox_folder.Items.Add(comboBox_folder.Text);
             }
-            if (!String.IsNullOrEmpty(this.comboBox_fileTypes.Text))
+            if (!String.IsNullOrEmpty(comboBox_fileTypes.Text))
             {
-                if (!this.comboBox_fileTypes.Items.Contains(this.comboBox_fileTypes.Text))
-                    this.comboBox_fileTypes.Items.Add(comboBox_fileTypes.Text);
+                if (!comboBox_fileTypes.Items.Contains(comboBox_fileTypes.Text))
+                    comboBox_fileTypes.Items.Add(comboBox_fileTypes.Text);
             }
             try
             {

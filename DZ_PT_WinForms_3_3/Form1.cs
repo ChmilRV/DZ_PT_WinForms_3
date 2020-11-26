@@ -21,7 +21,7 @@ namespace DZ_PT_WinForms_3_3
 
         private void Exit_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void About_ToolStripMenuItem_Click(object sender, EventArgs e)
